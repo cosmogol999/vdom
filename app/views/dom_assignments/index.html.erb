@@ -1,0 +1,32 @@
+
+<div class="mb-4 flex justify-between items-center">
+  <h1 class="text-lg">Assignments</h1>
+  <%= link_to "Back", doms_path, class: "link-primary text-sm" %>
+</div>
+
+<table class="border-collapse border border-slate-500 table-auto text-left w-full">
+  <thead class="text-center text-base bg-rose-300">
+    <tr>
+      <th class="border border-rose-400 p-1">Assignment</th>
+      <th class="border border-rose-400 p-1">Started at</th>
+      <th class="border border-rose-400 p-1">Description</th>
+      <th class="border border-rose-400 p-1">Action</th>
+    </tr>
+  </thead>
+  <tbody class="text-sm">
+    <% @dom_assignments.each do |da| %>
+      <tr>
+      <td class="border border-rose-300 p-1"><%= da.assignment.title %></td>
+      <td class="border border-rose-300 p-1"><%= da.started_at&.strftime("%m/%d/%Y %H:%M") %></td>
+      <td class="border border-rose-300 p-1"><%= da.assignment.description %></td>
+      <td class="border border-rose-300 p-1">
+        <% if da.started_at %>
+          <%= link_to "Done, #{@current_dom.title}", dom_assignment_stop_path(da), class: "link-primary" %>
+        <% else %>
+          <%= link_to "Start", dom_assignment_start_path(da), class: "link-primary" %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

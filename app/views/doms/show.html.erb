@@ -1,0 +1,18 @@
+<div class="mb-4">
+  <h1>You are controlled by <%= @current_dom.full_name %></h1>
+  <div class="mt-2">
+    <span>Status</span>
+    <span class="text-rose-300 text-sm"><%= @current_dom.status %><span>
+  </div>
+
+    <div class="mt-2">
+    <span>Merit</span>
+    <span class="text-rose-300 text-sm"><%= current_user.merit %> / 100<span>
+  </div>
+</div>
+
+<ul class="list-none flex justify-startitems-center gap-2">
+  <li><%= link_to "Assignments", dom_assignments_path, class: "link-primary" %></li>
+  <li>Ask</li>
+  <li>Report</li>
+</ul>

@@ -1,0 +1,47 @@
+# Files in the config/locales directory are used for internationalization and
+# are automatically loaded by Rails. If you want to use locales other than
+# English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more about the API, please read the Rails Internationalization guide
+# at https://guides.rubyonrails.org/i18n.html.
+#
+# Be aware that YAML interprets the following case-insensitive strings as
+# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
+# must be quoted to be interpreted as strings. For example:
+#
+#     en:
+#       "yes": yup
+#       enabled: "ON"
+
+en:
+  errors:
+    status_change: "Aren't you doing something sissy? Finish your task and come back later."
+    already_started_assignment: "You are already working on this task dumb sissy."
+  messages:
+    task_completed:
+      on_time:
+        a: Well done slut. Keep up the good work.
+        b: Good sissy! Now go back to your duty.
+        c: Points well earned my sissy but i am not done with you.
+      too_fast:
+        a: Do you think im dumb slut? Start again.
+        b: "This can't be done that fast. Give it another go now."
+        c: "Who do you think you foolin silly thing? Complete the task."
+      too_slow:
+        a: "What makes you took this long? I'll add a punishment to remind you to move you sissy ass faster."
+        b: "How dare you making me wait this long. A well earned punishment for you slut!"
+        c: "Why are you so slow? I give you a new punishment and hopes it will improve your performances."

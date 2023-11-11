@@ -1,0 +1,45 @@
+<h2 class="mb-4">Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "mb-4"}) do |f| %>
+  <div class="field">
+    <%= f.label :email, class: "text-rose-300" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "text-slate-900" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name, class: "text-rose-300" %><br />
+    <%= f.text_field :name, autofocus: true, class: "text-slate-900" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: "text-rose-300" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "text-slate-900" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, class: "text-rose-300" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "text-slate-900" %>
+  </div>
+
+  <div class="field text-slate-900">
+    <%= f.label :time_zone, class: "text-rose-300" %><br />
+    <%= f.select :time_zone, ActiveSupport::TimeZone.all.map{|tz| [tz.name, tz.name]}, prompt: "Select time zone" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: "btn-primary mt-2" %>
+  </div>
+
+  <% if resource.errors.any? %>
+    <ul class="mt-2 py-2 px-4 border-2 border-solid border-rose-900">
+      <% resource.errors.full_messages.each do |msg| %>
+        <li class="text-rose-900"><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
+<%= render "devise/shared/links" %>

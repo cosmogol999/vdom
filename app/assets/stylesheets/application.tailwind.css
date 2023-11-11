@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 rounded-sm border-2 border-solid border-rose-300 text-rose-300 hover:bg-rose-300 hover:text-slate-900;
+  }
+
+  .link-primary {
+    @apply hover:text-rose-300 text-slate-50
+  }
+
+  .notice {
+    @apply w-full bg-rose-300 text-slate-900 text-center
+  }
+
+  .alert {
+    @apply w-full bg-rose-900 text-slate-50 text-center
+  }
+}
+
+

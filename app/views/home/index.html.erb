@@ -1,0 +1,6 @@
+<div>
+  <p class="mb-4">😈 Welcome to VDOM 😈</p>
+  <% if current_user %>
+    <%= link_to "Go to #{current_user.dom.full_name}", doms_path, class: "link-primary" %>
+  <% end %>
+</div>

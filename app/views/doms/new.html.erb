@@ -1,0 +1,36 @@
+<div>
+  <h1>Welcome!</h1>
+
+  <p>First we need a little configuration. What kind of dom would you like ?<p>
+  
+  <%= form_for(@dom, url: doms_path, method: :post, html: { class: "my-4"}) do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+
+    <div class="field">
+      <%= f.label :title, class: "text-rose-300" %><br />
+      <%= f.text_field :title, autofocus: true, placeholder: "Mistress", class: "text-slate-900" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :name, class: "text-rose-300" %><br />
+      <%= f.text_field :name, autofocus: true, placeholder: "Lara", class: "text-slate-900" %>
+    </div>
+
+    <div class="field text-slate-900">
+      <%= f.label :pronoun, class: "text-rose-300" %><br />
+      <%= f.select :pronoun, Dom.pronouns.map{|k, v| [k, k]}, prompt: "Select pronoun" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Submit", class: "btn-primary mt-2" %>
+    </div>
+
+    <% if @dom.errors.any? %>
+      <ul class="mt-2 py-2 px-4 border-2 border-solid border-rose-900">
+        <% @dom.errors.full_messages.each do |msg| %>
+          <li class="text-rose-900"><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
