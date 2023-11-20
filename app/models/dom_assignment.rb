@@ -1,4 +1,6 @@
 class DomAssignment < ApplicationRecord
+  include Notificable
+
   belongs_to :dom
   belongs_to :assignment
 
@@ -6,8 +8,6 @@ class DomAssignment < ApplicationRecord
 
   def completed_on_time?
     return false if completed_at.nil?
-    puts "assignment.min_completion_time: #{assignment.min_completion_time}"
-    puts "assignment.max_completion_time: #{assignment.max_completion_time}"
 
     completed_in.between?(assignment.min_completion_time, (assignment.max_completion_time || 999999))
   end
@@ -20,6 +20,8 @@ class DomAssignment < ApplicationRecord
     completed_in > assignment.max_completion_time.to_i
   end
 
+  private
+  
   def completed_in
     ((completed_at - started_at) / 1.minutes)
   end

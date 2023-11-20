@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resource :doms, only: [:new, :create, :show]
+  resources :notifications, only: [ :index, :destroy ]
   
   get "/assignments", to: "dom_assignments#index", as: "dom_assignments"
   get "/assignments/:id/start", to: "dom_assignments#start", as: "dom_assignment_start"

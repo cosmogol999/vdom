@@ -7,5 +7,10 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :time_zone, presence: true
 
+  has_many :notifications
   has_one :dom
+
+  def unviewed_notifications_count
+    self.notifications.unviewed.count
+  end
 end

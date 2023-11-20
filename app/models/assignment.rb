@@ -7,6 +7,6 @@ class Assignment < ApplicationRecord
   validates :level, presence: true
   validates :min_completion_time, presence: true
 
-  enum :kind, [:housework, :punishment]
+  enum :kind, [:housework, :punishment, :training]
   enum :level, [:very_easy, :easy, :mid, :hard, :very_hard]
 end

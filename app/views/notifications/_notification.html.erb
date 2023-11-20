@@ -1,0 +1,6 @@
+<li class="py-4 flex justify-between items-center" id="<%= dom_id(notification) %>">
+  <%= render "notifications/#{notification.item_type.underscore}", notification: notification %>
+  <%= link_to notification_path(notification), data: { 'turbo-method' => :delete } do %>
+    <i class="ph ph-x link-primary"></i>
+  <% end %>  
+</li>

@@ -12,11 +12,11 @@
   }
 
   .notice {
-    @apply w-full bg-rose-300 text-slate-900 text-center
+    @apply w-full bg-rose-300 text-slate-50 text-center py-2
   }
 
   .alert {
-    @apply w-full bg-rose-900 text-slate-50 text-center
+    @apply w-full bg-rose-900 text-slate-50 text-center py-2
   }
 }
 
